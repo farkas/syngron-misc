@@ -351,6 +351,7 @@ author_email="syngron(a)gmail.com">
 				for(var i = 0; i < events.length; ++i) {
 
 					var e = events[i];
+					console.log (e.palette);
 					if ('title' in e) {
 						var startDate = new Date(e.startTime.year, (e.startTime.month-1), e.startTime.date);
 						var endDate = new Date(e.endTime.year, (e.endTime.month-1), e.endTime.date);
