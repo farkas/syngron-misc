@@ -365,8 +365,9 @@ author_email="syngron(a)gmail.com">
 							//	continue;
 							//}
 							
-							if (e.allDay && endDate != currentDate) { //only show all-day events
+							if (e.allDay && endDate.getTime() != currentDate.getTime()) { //only show all-day events
 								console.log("CurrentDate " + currentDate + " startDate: " + startDate + " endDate: " +endDate);
+								console.log("CurrentDate " + currentDate.getTime() + " startDate: " + startDate.getTime() + " endDate: " +endDate.getTime());
 								console.log("Event: " + e.title + " StartDate: " + JSON.stringify(e.startTime) + " EndDate: " + JSON.stringify(e.endTime));
 								document.getElementById(id).className += " busy ";
 								document.getElementById(id).title += e.title + " " + e.startTime.date + " " + e.endTime.date+ "; \n";
