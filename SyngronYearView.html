@@ -365,7 +365,7 @@ author_email="syngron(a)gmail.com">
 							//	continue;
 							//}
 							
-							if (e.allDay) { //only show all-day events
+							if (e.allDay && endDate != currentDate) { //only show all-day events
 								console.log("Event: " + e.title + " StartDate: " + JSON.stringify(e.startTime) + " EndDate: " + JSON.stringify(e.endTime));
 								document.getElementById(id).className += " busy ";
 								document.getElementById(id).title += e.title + " " + e.startTime.date + " " + e.endTime.date+ "; \n";
