@@ -360,15 +360,16 @@ author_email="syngron(a)gmail.com">
 						while(currentDate.getTime() <= endDate.getTime()) {
 							id = currentDate.getFullYear() + "-" + (currentDate.getMonth()+1) + "-" + currentDate.getDate();
 							// prevent double entries
-							if((currentDate.getDate() == endDate.getDate() && e.allDay == true) || (currentDate.getMonth() + 2) != month) {
-								currentDate.setDate(currentDate.getDate() + 1);
-								continue;
+							// if((currentDate.getDate() == endDate.getDate() && e.allDay == true) || (currentDate.getMonth() + 2) != month) {
+							//	currentDate.setDate(currentDate.getDate() + 1);
+							//	continue;
+							//}
+							
+							if (e.allDay) { //only show all-day events
+								document.getElementById(id).className += " busy ";
+								document.getElementById(id).title += e.title + " " + e.startTime.date + " " + e.endTime.date+ "; \n";
+								document.getElementById(id).innerText += "\n" + e.title.substr(0,14);
 							}
-
-							document.getElementById(id).className += " busy ";
-							document.getElementById(id).title += e.title + " " + e.startTime.date + " " + e.endTime.date+ "; \n";
-							document.getElementById(id).innerText += "\n" + e.title.substr(0,14);
-
 							currentDate.setDate(currentDate.getDate() + 1);
 
 						}
