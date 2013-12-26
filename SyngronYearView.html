@@ -351,7 +351,7 @@ author_email="syngron(a)gmail.com">
 				for(var i = 0; i < events.length; ++i) {
 
 					var e = events[i];
-					console.log (e.palette);
+					// console.log (e.palette);
 					if ('title' in e && e.palette.darkest === "#CD74E6") {
 						var startDate = new Date(e.startTime.year, (e.startTime.month-1), e.startTime.date);
 						var endDate = new Date(e.endTime.year, (e.endTime.month-1), e.endTime.date);
@@ -366,6 +366,7 @@ author_email="syngron(a)gmail.com">
 							//}
 							
 							if (e.allDay) { //only show all-day events
+								console.log("Event: " + e.title + " StartDate: " + e.startTime + " EndDate: " + e.endTime);
 								document.getElementById(id).className += " busy ";
 								document.getElementById(id).title += e.title + " " + e.startTime.date + " " + e.endTime.date+ "; \n";
 								document.getElementById(id).innerText += "\n" + e.title.substr(0,14);
